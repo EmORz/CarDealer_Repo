@@ -7,14 +7,16 @@ namespace CarDealer.Data
 {
     public class CarDealerContext : DbContext
     {
+
+        public CarDealerContext()
+        {
+        }
+
         public CarDealerContext(DbContextOptions options)
             : base(options)
         {
         }
 
-        protected CarDealerContext()
-        {
-        }
 
         public DbSet<Car> Cars { get; set; }
         public DbSet<Customer> Customers { get; set; }
@@ -27,7 +29,7 @@ namespace CarDealer.Data
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Server=DESKTOP-CP2NEHV\\SQLEXPRESS;Database=CarDealer;Trusted_Connection=True;");
+                optionsBuilder.UseSqlServer(@"Server=DESKTOP-CP2NEHV\SQLEXPRESS;Database=CarDealer;Trusted_Connection=True;");
             }
         }
 
