@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
@@ -7,15 +8,9 @@ namespace CarDealer.Models
 {
     public class Sale
     {
-
-        public Sale(Car car, Customer customer)
-        {
-            this.Car = car;
-            this.Customer = customer;
-
-        }
         public int Id { get; set; }
 
+        [Required]
         public decimal Discount { get; set; }
 
         public int CarId { get; set; }
